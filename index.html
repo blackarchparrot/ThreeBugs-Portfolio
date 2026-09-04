@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08090d">
+
+    <title>Portfolio Collective — Explore Our Work</title>
+
+    <meta name="description"
+          content="A collection of portfolios, projects, skills and creative journeys. Explore the people behind the work.">
+
+    <style>
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: #08090d;
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+
+        /* =========================================================
+           BACKGROUND
+        ========================================================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 85%
+                );
+
+            pointer-events: none;
+            z-index: -3;
+        }
+
+        .ambient {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(116, 86, 255, 0.16),
+                    transparent 70%
+                );
+
+            filter: blur(40px);
+
+            pointer-events: none;
+            z-index: -2;
+
+            animation: float 10s ease-in-out infinite alternate;
+        }
+
+        .ambient.one {
+            top: -200px;
+            left: -150px;
+        }
+
+        .ambient.two {
+            right: -200px;
+            top: 35%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(50px, 35px);
+            }
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 100;
+
+            padding: 20px 5%;
+        }
+
+        .nav-inner {
+            max-width: 1250px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 13px 18px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            background:
+                rgba(10, 11, 16, 0.65);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-radius: 18px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-mark {
+            width: 30px;
+            height: 30px;
+
+            border-radius: 9px;
+
+            display: grid;
+            place-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #8b7cff,
+                #5b4bff
+            );
+
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+
+            color: #a7a8b1;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 140px 20px 100px;
+
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 13px;
+
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 999px;
+
+            background: rgba(255,255,255,0.035);
+
+            color: #aaaab5;
+
+            font-size: 13px;
+            margin-bottom: 28px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+
+            background: #7c6cff;
+            border-radius: 50%;
+
+            box-shadow: 0 0 15px #7c6cff;
+        }
+
+        h1 {
+            font-size: clamp(3.3rem, 8vw, 7rem);
+
+            line-height: 0.95;
+
+            letter-spacing: -0.065em;
+
+            font-weight: 800;
+
+            margin-bottom: 30px;
+        }
+
+        .gradient-text {
+            background:
+                linear-gradient(
+                    120deg,
+                    #ffffff 10%,
+                    #a79cff 48%,
+                    #7162ff 90%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: auto;
+
+            color: #9698a4;
+
+            font-size: clamp(16px, 2vw, 19px);
+
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 13px 20px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: white;
+            color: #090a0e;
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.035);
+            color: white;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #646670;
+
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 35px;
+
+            margin: 10px auto 0;
+
+            background: linear-gradient(
+                to bottom,
+                #6864ff,
+                transparent
+            );
+        }
+
+
+        /* =========================================================
+           COMMON SECTION
+        ========================================================= */
+
+        section {
+            max-width: 1250px;
+            margin: auto;
+
+            padding: 110px 5%;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            gap: 30px;
+
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: #756aff;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+
+            letter-spacing: -0.045em;
+
+            line-height: 1.05;
+        }
+
+        .section-description {
+            max-width: 430px;
+
+            color: #858793;
+
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           PORTFOLIO GRID
+        ========================================================= */
+
+        .portfolio-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .portfolio-card {
+            position: relative;
+
+            min-height: 330px;
+
+            padding: 25px;
+
+            border-radius: 22px;
+
+            border: 1px solid rgba(255,255,255,0.075);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.018)
+                );
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(139,124,255,0.4);
+        }
+
+        .card-glow {
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -80px;
+            top: -80px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(115,100,255,0.18),
+                    transparent 70%
+                );
+
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-card:hover .card-glow {
+            transform: scale(1.5);
+        }
+
+        .avatar {
+            width: 58px;
+            height: 58px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #282536,
+                    #171821
+                );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            font-size: 19px;
+            font-weight: 700;
+
+            margin-bottom: 35px;
+        }
+
+        .card-role {
+            color: #7f75ff;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+
+            margin-bottom: 9px;
+        }
+
+        .card-name {
+            font-size: 25px;
+
+            letter-spacing: -0.03em;
+
+            margin-bottom: 12px;
+        }
+
+        .card-description {
+            color: #81838e;
+
+            font-size: 14px;
+            line-height: 1.6;
+
+            max-width: 330px;
+        }
+
+        .card-link {
+            position: absolute;
+
+            left: 25px;
+            bottom: 24px;
+
+            color: white;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            transition: gap 0.25s ease;
+        }
+
+        .portfolio-card:hover .card-link {
+            gap: 12px;
+        }
+
+
+        /* =========================================================
+           PHILOSOPHY
+        ========================================================= */
+
+        .statement {
+            text-align: center;
+
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+
+        .statement h2 {
+            max-width: 950px;
+
+            margin: auto;
+
+            font-size: clamp(2.3rem, 5vw, 5rem);
+
+            line-height: 1.05;
+
+            letter-spacing: -0.055em;
+        }
+
+        .muted {
+            color: #545661;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 45px 5% 35px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        footer p {
+            color: #60616b;
+            font-size: 12px;
+        }
+
+        .footer-brand {
+            color: #a5a6af;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .portfolio-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 12px;
+            }
+
+            .nav-inner {
+                padding: 11px 14px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            h1 {
+                font-size: clamp(3rem, 15vw, 5rem);
+            }
+
+            .section-header {
+                display: block;
+            }
+
+            .section-description {
+                margin-top: 18px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-card {
+                min-height: 300px;
+            }
+
+            section {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .statement {
+                padding-top: 110px;
+                padding-bottom: 110px;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Ambient background -->
+    <div class="ambient one"></div>
+    <div class="ambient two"></div>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <nav>
+        <div class="nav-inner">
+
+            <a href="#" class="logo">
+                <span class="logo-mark">P</span>
+                Portfolio Collective
+            </a>
+
+            <div class="nav-links">
+                <a href="#portfolios">Portfolios</a>
+                <a href="#about">About</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content reveal">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    A collection of creative minds
+                </div>
+
+                <h1>
+                    Different paths.<br>
+                    <span class="gradient-text">
+                        One place.
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+                    Welcome to our portfolio collective — a shared space
+                    where ideas, skills, projects and personal journeys
+                    come together.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#portfolios"
+                        class="btn btn-primary"
+                    >
+                        Explore Portfolios
+                        <span>→</span>
+                    </a>
+
+                    <a
+                        href="#about"
+                        class="btn btn-secondary"
+                    >
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                Scroll
+                <div class="scroll-line"></div>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PORTFOLIOS
+        ====================================================== -->
+
+        <section id="portfolios">
+
+            <div class="section-header reveal">
+
+                <div>
+                    <div class="section-label">
+                        The Collection
+                    </div>
+
+                    <h2 class="section-title">
+                        Meet the people<br>
+                        behind the work.
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    Explore individual portfolios and discover the
+                    different skills, interests and projects that
+                    make every journey unique.
+                </p>
+
+            </div>
+
+
+            <div class="portfolio-grid">
+
+                <!-- CARD 01 -->
+                <a href="portfolio-1/index.html"
+                   class="portfolio-card reveal">
+
+                    <div class="card-glow"></div>
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div class="card-role">
+                        Developer
+                    </div>
+
+                    <h3 class="card-name">
+                        Person One
+                    </h3>
+
+                    <p class="card-description">
+                        Explore projects, skills, experience and
+                        ideas from this portfolio.
+                    </p>
+
+                    <span class="card-link">
+                        View Portfolio →
+                    </span>
+
+                </a>
+
+
+                <!-- CARD 02 -->
+                <a href="portfolio-2/index.html"
+                   class="portfolio-card reveal">
+
+                    <div class="card-glow"></div>
+
+                    <div class="avatar">
+                        B
+                    </div>
+
+                    <div class="card-role">
+                        Designer
+                    </div>
+
+                    <h3 class="card-name">
+                        Person Two
+                    </h3>
+
+                    <p class="card-description">
+                        Discover creative work, projects and
+                        personal achievements.
+                    </p>
+
+                    <span class="card-link">
+                        View Portfolio →
+                    </span>
+
+                </a>
+
+
+                <!-- CARD 03 -->
+                <a href="portfolio-3/index.html"
+                   class="portfolio-card reveal">
+
+                    <div class="card-glow"></div>
+
+                    <div class="avatar">
+                        C
+                    </div>
+
+                    <div class="card-role">
+                        Engineer
+                    </div>
+
+                    <h3 class="card-name">
+                        Person Three
+                    </h3>
+
+                    <p class="card-description">
+                        A collection of work, experiences and
+                        things worth exploring.
+                    </p>
+
+                    <span class="card-link">
+                        View Portfolio →
+                    </span>
+
+                </a>
+
+
+                <!-- CARD 04 -->
+                <a href="portfolio-4/index.html"
+                   class="portfolio-card reveal">
+
+                    <div class="card-glow"></div>
+
+                    <div class="avatar">
+                        D
+                    </div>
+
+                    <div class="card-role">
+                        Researcher
+                    </div>
+
+                    <h3 class="card-name">
+                        Person Four
+                    </h3>
+
+                    <p class="card-description">
+                        Explore research, interests, projects
+                        and professional work.
+                    </p>
+
+                    <span class="card-link">
+                        View Portfolio →
+                    </span>
+
+                </a>
+
+
+                <!-- CARD 05 -->
+                <a href="portfolio-5/index.html"
+                   class="portfolio-card reveal">
+
+                    <div class="card-glow"></div>
+
+                    <div class="avatar">
+                        E
+                    </div>
+
+                    <div class="card-role">
+                        Creator
+                    </div>
+
+                    <h3 class="card-name">
+                        Person Five
+                    </h3>
+
+                    <p class="card-description">
+                        Discover another unique perspective,
+                        skillset and creative journey.
+                    </p>
+
+                    <span class="card-link">
+                        View Portfolio →
+                    </span>
+
+                </a>
+
+
+                <!-- ADD MORE CARDS HERE -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             STATEMENT
+        ====================================================== -->
+
+        <section id="about" class="statement reveal">
+
+            <div class="section-label">
+                Why this exists
+            </div>
+
+            <h2>
+                <span class="muted">
+                    No two journeys are the same.
+                </span>
+                <br>
+                And that's what makes this collection interesting.
+            </h2>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+            Portfolio Collective
+        </div>
+
+        <p>
+            © 2026 · A shared space for ideas, skills & creativity.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /*
+         * Reveal elements when they enter the viewport.
+         */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+
+
+        document
+            .querySelectorAll(".portfolio-card")
+            .forEach(card => {
+
+                card.addEventListener("mousemove", event => {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const x =
+                        event.clientX - rect.left;
+
+                    const y =
+                        event.clientY - rect.top;
+
+                    card.style.setProperty(
+                        "--mouse-x",
+                        `${x}px`
+                    );
+
+                    card.style.setProperty(
+                        "--mouse-y",
+                        `${y}px`
+                    );
+
+                });
+
+            });
+
+    </script>
+
+</body>
+</html>

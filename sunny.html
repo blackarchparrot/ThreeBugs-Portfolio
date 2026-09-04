@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Black Parrot</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#ffffff;
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+.card{
+    background:#1e293b;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 0 20px rgba(0,0,0,.35);
+    margin-bottom:35px;
+}
+
+h1{
+    text-align:center;
+    color:#38bdf8;
+    margin-bottom:25px;
+    font-size:2.3rem;
+}
+
+h2{
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+p{
+    margin-bottom:18px;
+    color:#dbeafe;
+}
+
+strong{
+    color:#67e8f9;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    margin-top:8px;
+    margin-bottom:18px;
+    border:none;
+    border-radius:10px;
+    background:#334155;
+    color:white;
+    font-size:15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    box-shadow:0 0 10px #38bdf8;
+}
+
+button, .btn-portfolio{
+    display: inline-block;
+    width:100%;
+    padding:15px;
+    background:#0ea5e9;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:17px;
+    text-align:center;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover, .btn-portfolio:hover{
+    background:#0284c7;
+    transform:scale(1.02);
+}
+
+.portfolio-container {
+    margin-top: 25px;
+}
+
+.footer{
+    text-align:center;
+    color:#94a3b8;
+    margin:30px 0;
+}
+
+.footer a {
+    color: #38bdf8;
+}
+
+label{
+    font-weight:bold;
+}
+
+.about-icon{
+    font-size:55px;
+    text-align:center;
+    margin-bottom:15px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="about-icon">🦜</div>
+
+<h1>Black Parrot</h1>
+
+<p>
+Hello! I am <strong>Black Parrot</strong>, an online identity I have used since
+2022. I prefer to keep my personal identity private and let my work speak for
+itself.
+</p>
+
+<p>
+My journey began with <strong>Machine Learning</strong>, where I spent years
+designing intelligent algorithms, AI models, and software solutions. I primarily
+develop using <strong>Python</strong> and <strong>JavaScript</strong>, while
+also having experience with <strong>C/C++</strong>.
+</p>
+
+<p>
+Throughout my programming journey, I have built numerous AI models,
+applications, algorithms, automation tools, and open-source projects. My work
+has been recognized with multiple programming awards, including achievements in
+government-powered national programming competitions.
+</p>
+
+<p>
+Later, my curiosity expanded into <strong>Web Development</strong>. Since then,
+I have created websites for different communities, educational platforms, and
+personal projects, always aiming to make technology more useful and accessible.
+</p>
+
+<p>
+Every project is a continuous learning experience. If you discover a bug, have
+an idea for improvement, or wish to discuss any of my algorithms, applications,
+GitHub repositories, models, websites, or publications, I would genuinely
+appreciate hearing from you.
+</p>
+
+<p>
+Thank you for visiting my work and supporting independent development.
+Happy coding! 🚀
+</p>
+
+ 
+<div class="portfolio-container">
+    <a href="https://e-portfolio.blackparrotfedora.workers.dev/" target="_blank" rel="noopener noreferrer" class="btn-portfolio">
+        <b>👨‍💻 Explore My Portfolio</b>
+    </a>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📨 Report or Contact</h2>
+
+<form action="https://api.web3forms.com/submit" method="POST">
+
+        <input type="hidden" name="access_key" value="8782080c-90b9-4240-bbf6-73ca913b53dd">
+        <input type="hidden" name="subject" value="New Portfolio Submission from Black Parrot Profile">
+
+        <div class="form-group">
+            <label for="name">Reporter's Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number">
+        </div>
+
+        <div class="form-group">
+            <label for="project">Related Project</label>
+            <select id="project" name="project_type">
+                <option value="" disabled selected>Choose One</option>
+                <option value="Algorithms">Algorithms</option>
+                <option value="Functions">Functions</option>
+                <option value="GitHub Repositories">GitHub Repositories</option>
+                <option value="Applications">Applications</option>
+                <option value="Models">Models</option>
+                <option value="Websites">Websites</option>
+                <option value="Publications">Publications</option>
+            </select>
+        </div>
+      
+        <div class="form-group">
+            <label for="message">Your Report / Suggestion</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+    <div class="footer">
+        <p>Or send me an email at <a href="mailto:blackparrot@airmail.cc">blackparrot@airmail.cc</a></p>
+        <p>Made with ❤️ by Black Parrot</p>
+    </div>
+
+</div>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e){
+    const email = document.querySelector("input[name=email]").value.trim();
+    const phone = document.querySelector("input[name=mobile]").value.trim();
+
+    if(email === "" && phone === ""){
+        e.preventDefault();
+        alert("Please provide either an Email Address or a Mobile Number.");
+    }
+});
+</script>
+
+</body>
+</html>

@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#08090d">
 
-    <title>Portfolio Collective — Explore Our Work</title>
+    <title>Three Bugs — Team Portfolio</title>
 
     <meta name="description"
-          content="A collection of portfolios, projects, skills and creative journeys. Explore the people behind the work.">
+          content="The official portfolio of Three Bugs — explore our team, projects, skills and creative work.">
 
     <style>
-
 
         * {
             margin: 0;
@@ -46,6 +45,10 @@
         }
 
 
+        /* =========================
+           BACKGROUND
+        ========================= */
+
         body::before {
             content: "";
             position: fixed;
@@ -74,6 +77,7 @@
             pointer-events: none;
             z-index: -3;
         }
+
 
         .ambient {
             position: fixed;
@@ -108,7 +112,9 @@
             animation-delay: -4s;
         }
 
+
         @keyframes float {
+
             from {
                 transform: translate(0, 0);
             }
@@ -116,8 +122,13 @@
             to {
                 transform: translate(50px, 35px);
             }
+
         }
 
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             width: 100%;
@@ -151,6 +162,7 @@
             border-radius: 18px;
         }
 
+
         .logo {
             display: flex;
             align-items: center;
@@ -159,6 +171,7 @@
             font-weight: 700;
             letter-spacing: -0.3px;
         }
+
 
         .logo-mark {
             width: 30px;
@@ -169,15 +182,18 @@
             display: grid;
             place-items: center;
 
-            background: linear-gradient(
-                135deg,
-                #8b7cff,
-                #5b4bff
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #8b7cff,
+                    #5b4bff
+                );
 
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 900;
+            letter-spacing: -0.5px;
         }
+
 
         .nav-links {
             display: flex;
@@ -196,6 +212,9 @@
         }
 
 
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 100vh;
@@ -211,9 +230,11 @@
             position: relative;
         }
 
+
         .hero-content {
             max-width: 900px;
         }
+
 
         .eyebrow {
             display: inline-flex;
@@ -233,6 +254,7 @@
             margin-bottom: 28px;
         }
 
+
         .status-dot {
             width: 7px;
             height: 7px;
@@ -242,6 +264,7 @@
 
             box-shadow: 0 0 15px #7c6cff;
         }
+
 
         h1 {
             font-size: clamp(3.3rem, 8vw, 7rem);
@@ -254,6 +277,7 @@
 
             margin-bottom: 30px;
         }
+
 
         .gradient-text {
             background:
@@ -270,6 +294,7 @@
             color: transparent;
         }
 
+
         .hero-description {
             max-width: 650px;
             margin: auto;
@@ -281,6 +306,13 @@
             line-height: 1.7;
         }
 
+
+        .hero-description strong {
+            color: #d8d7ff;
+            font-weight: 600;
+        }
+
+
         .hero-buttons {
             margin-top: 40px;
 
@@ -290,6 +322,7 @@
 
             flex-wrap: wrap;
         }
+
 
         .btn {
             display: inline-flex;
@@ -310,20 +343,24 @@
                 background 0.25s ease;
         }
 
+
         .btn:hover {
             transform: translateY(-3px);
         }
+
 
         .btn-primary {
             background: white;
             color: #090a0e;
         }
 
+
         .btn-secondary {
             border: 1px solid rgba(255,255,255,0.1);
             background: rgba(255,255,255,0.035);
             color: white;
         }
+
 
         .scroll-indicator {
             position: absolute;
@@ -339,18 +376,25 @@
             text-transform: uppercase;
         }
 
+
         .scroll-line {
             width: 1px;
             height: 35px;
 
             margin: 10px auto 0;
 
-            background: linear-gradient(
-                to bottom,
-                #6864ff,
-                transparent
-            );
+            background:
+                linear-gradient(
+                    to bottom,
+                    #6864ff,
+                    transparent
+                );
         }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
             max-width: 1250px;
@@ -358,6 +402,7 @@
 
             padding: 110px 5%;
         }
+
 
         .section-header {
             display: flex;
@@ -368,6 +413,7 @@
 
             margin-bottom: 45px;
         }
+
 
         .section-label {
             color: #756aff;
@@ -381,6 +427,7 @@
             margin-bottom: 12px;
         }
 
+
         .section-title {
             font-size: clamp(2rem, 4vw, 3.5rem);
 
@@ -388,6 +435,7 @@
 
             line-height: 1.05;
         }
+
 
         .section-description {
             max-width: 430px;
@@ -399,7 +447,9 @@
         }
 
 
- 
+        /* =========================
+           PORTFOLIO CARDS
+        ========================= */
 
         .portfolio-grid {
             display: grid;
@@ -409,6 +459,7 @@
 
             gap: 16px;
         }
+
 
         .portfolio-card {
             position: relative;
@@ -435,12 +486,14 @@
                 border-color 0.35s ease;
         }
 
+
         .portfolio-card:hover {
             transform: translateY(-8px);
 
             border-color:
                 rgba(139,124,255,0.4);
         }
+
 
         .card-glow {
             position: absolute;
@@ -461,9 +514,11 @@
             transition: transform 0.4s ease;
         }
 
+
         .portfolio-card:hover .card-glow {
             transform: scale(1.5);
         }
+
 
         .avatar {
             width: 58px;
@@ -489,6 +544,7 @@
             margin-bottom: 35px;
         }
 
+
         .card-role {
             color: #7f75ff;
 
@@ -501,6 +557,7 @@
             margin-bottom: 9px;
         }
 
+
         .card-name {
             font-size: 25px;
 
@@ -508,6 +565,7 @@
 
             margin-bottom: 12px;
         }
+
 
         .card-description {
             color: #81838e;
@@ -517,6 +575,7 @@
 
             max-width: 330px;
         }
+
 
         .card-link {
             position: absolute;
@@ -536,9 +595,15 @@
             transition: gap 0.25s ease;
         }
 
+
         .portfolio-card:hover .card-link {
             gap: 12px;
         }
+
+
+        /* =========================
+           ABOUT / STATEMENT
+        ========================= */
 
         .statement {
             text-align: center;
@@ -546,6 +611,7 @@
             padding-top: 150px;
             padding-bottom: 150px;
         }
+
 
         .statement h2 {
             max-width: 950px;
@@ -559,10 +625,15 @@
             letter-spacing: -0.055em;
         }
 
+
         .muted {
             color: #545661;
         }
 
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             max-width: 1250px;
@@ -582,10 +653,12 @@
             gap: 20px;
         }
 
+
         footer p {
             color: #60616b;
             font-size: 12px;
         }
+
 
         .footer-brand {
             color: #a5a6af;
@@ -593,6 +666,10 @@
             font-weight: 600;
         }
 
+
+        /* =========================
+           REVEAL ANIMATION
+        ========================= */
 
         .reveal {
             opacity: 0;
@@ -603,11 +680,16 @@
                 transform 0.8s ease;
         }
 
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 900px) {
 
@@ -618,308 +700,486 @@
 
         }
 
+
         @media (max-width: 650px) {
 
             nav {
                 padding: 12px;
             }
 
+
             .nav-inner {
                 padding: 11px 14px;
             }
+
 
             .nav-links {
                 display: none;
             }
 
+
             .hero {
                 padding-top: 120px;
             }
+
 
             h1 {
                 font-size: clamp(3rem, 15vw, 5rem);
             }
 
+
             .section-header {
                 display: block;
             }
+
 
             .section-description {
                 margin-top: 18px;
             }
 
+
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
 
+
             .portfolio-card {
                 min-height: 300px;
             }
+
 
             section {
                 padding-top: 80px;
                 padding-bottom: 80px;
             }
 
+
             .statement {
                 padding-top: 110px;
                 padding-bottom: 110px;
             }
 
+
             footer {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-     
+
+    <!-- AMBIENT BACKGROUND -->
+
     <div class="ambient one"></div>
     <div class="ambient two"></div>
 
 
-
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
     <nav>
+
         <div class="nav-inner">
 
             <a href="#" class="logo">
-                <span class="logo-mark">P</span>
-                Portfolio Collective
+
+                <span class="logo-mark">
+                    3B
+                </span>
+
+                Three Bugs
+
             </a>
 
+
             <div class="nav-links">
-                <a href="#portfolios">Portfolios</a>
-                <a href="#about">About</a>
+
+                <a href="#portfolios">
+                    Team
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
             </div>
 
         </div>
+
     </nav>
 
 
-
+    <!-- =========================
+         MAIN
+    ========================= -->
 
     <main>
+
+
+        <!-- HERO -->
 
         <section class="hero">
 
             <div class="hero-content reveal">
 
+
                 <div class="eyebrow">
+
                     <span class="status-dot"></span>
-                    A collection of creative minds
+
+                    Three Bugs · Team Portfolio
+
                 </div>
 
+
                 <h1>
-                    Different paths.<br>
+
+                    Three minds.<br>
+
                     <span class="gradient-text">
-                        One place.
+                        One team.
                     </span>
+
                 </h1>
 
+
                 <p class="hero-description">
-                    Welcome to our portfolio collective — a shared space
-                    where ideas, skills, projects and personal journeys
-                    come together.
+
+                    Welcome to the official portfolio of
+                    <strong>Three Bugs</strong> —
+                    a team where different skills, ideas and perspectives
+                    come together to build, create and explore meaningful work.
+
                 </p>
 
+
                 <div class="hero-buttons">
+
 
                     <a
                         href="#portfolios"
                         class="btn btn-primary"
                     >
-                        Explore Portfolios
-                        <span>→</span>
+
+                        Meet the Team
+
+                        <span>
+                            →
+                        </span>
+
                     </a>
+
 
                     <a
                         href="#about"
                         class="btn btn-secondary"
                     >
-                        Learn More
+
+                        About Three Bugs
+
                     </a>
+
 
                 </div>
 
+
             </div>
 
+
             <div class="scroll-indicator">
+
                 Scroll
+
                 <div class="scroll-line"></div>
+
             </div>
+
 
         </section>
 
 
-
+        <!-- =========================
+             TEAM
+        ========================= -->
 
         <section id="portfolios">
 
+
             <div class="section-header reveal">
 
+
                 <div>
+
                     <div class="section-label">
-                        The Collection
+                        Three Bugs
                     </div>
 
+
                     <h2 class="section-title">
+
                         Meet the people<br>
-                        behind the work.
+                        behind the team.
+
                     </h2>
+
                 </div>
 
+
                 <p class="section-description">
-                    Explore individual portfolios and discover the
-                    different skills, interests and projects that
-                    make every journey unique.
+
+                    Explore the individual portfolios of the Three Bugs team —
+                    their skills, projects, interests and the work they bring
+                    to the team.
+
                 </p>
+
 
             </div>
 
 
             <div class="portfolio-grid">
 
-                 
-                <a href="sunny.html"
-                   class="portfolio-card reveal">
+
+                <!-- =========================
+                     SUNNY
+                ========================= -->
+
+                <a
+                    href="sunny.html"
+                    class="portfolio-card reveal"
+                >
 
                     <div class="card-glow"></div>
+
 
                     <div class="avatar">
                         A
                     </div>
 
+
                     <div class="card-role">
+
                         Programmer, Researcher & Developer
+
                     </div>
 
+
                     <h3 class="card-name">
+
                         Aftab Sunny
+
                     </h3>
 
+
                     <p class="card-description">
+
                         Explore projects, skills, experience and
                         ideas from this portfolio.
+
                     </p>
 
+
                     <span class="card-link">
+
                         View Portfolio →
+
                     </span>
+
 
                 </a>
 
 
-                 
-                <a href="alvina.html"
-                   class="portfolio-card reveal">
+                <!-- =========================
+                     ALVINA
+                ========================= -->
+
+                <a
+                    href="alvina.html"
+                    class="portfolio-card reveal"
+                >
 
                     <div class="card-glow"></div>
+
 
                     <div class="avatar">
                         B
                     </div>
 
+
                     <div class="card-role">
+
                         Designer
+
                     </div>
 
+
                     <h3 class="card-name">
+
                         Alvina Tasnim Shahid
+
                     </h3>
 
+
                     <p class="card-description">
+
                         Discover creative work, projects and
                         personal achievements.
+
                     </p>
 
+
                     <span class="card-link">
+
                         View Portfolio →
+
                     </span>
+
 
                 </a>
 
 
-                 
-                <a href="sumiya.html"
-                   class="portfolio-card reveal">
+                <!-- =========================
+                     SUMIYA
+                ========================= -->
+
+                <a
+                    href="sumiya.html"
+                    class="portfolio-card reveal"
+                >
 
                     <div class="card-glow"></div>
+
 
                     <div class="avatar">
                         C
                     </div>
 
+
                     <div class="card-role">
+
                         Designer
+
                     </div>
 
+
                     <h3 class="card-name">
+
                         Mst. Sumiya Akter
+
                     </h3>
 
+
                     <p class="card-description">
+
                         A collection of work, experiences and
                         things worth exploring.
+
                     </p>
 
+
                     <span class="card-link">
+
                         View Portfolio →
+
                     </span>
+
 
                 </a>
 
-                 
 
             </div>
+
 
         </section>
 
 
+        <!-- =========================
+             ABOUT
+        ========================= -->
 
-        <section id="about" class="statement reveal">
+        <section
+            id="about"
+            class="statement reveal"
+        >
+
 
             <div class="section-label">
-                Why this exists
+
+                About Three Bugs
+
             </div>
 
+
             <h2>
+
                 <span class="muted">
-                    No two journeys are the same.
+
+                    Different skills. Different perspectives.
+
                 </span>
+
                 <br>
-                And that's what makes this collection interesting.
+
+                One team building things together.
+
             </h2>
 
+
         </section>
+
 
     </main>
 
 
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
 
+
         <div class="footer-brand">
-            Portfolio Collective
+
+            Three Bugs
+
         </div>
 
+
         <p>
-            © 2026 · A shared space for ideas, skills & creativity.
+
+            © 2026 · The official portfolio of the Three Bugs team.
+
         </p>
 
+
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
 
+        /* =========================
+           REVEAL ON SCROLL
+        ========================= */
 
         const revealElements =
             document.querySelectorAll(".reveal");
 
+
         const observer =
             new IntersectionObserver(
+
                 (entries) => {
 
                     entries.forEach(entry => {
@@ -935,48 +1195,68 @@
                     });
 
                 },
+
                 {
                     threshold: 0.12
                 }
+
             );
 
 
         revealElements.forEach(element => {
+
             observer.observe(element);
+
         });
 
 
+        /* =========================
+           CARD MOUSE TRACKING
+        ========================= */
 
         document
             .querySelectorAll(".portfolio-card")
             .forEach(card => {
 
-                card.addEventListener("mousemove", event => {
 
-                    const rect =
-                        card.getBoundingClientRect();
+                card.addEventListener(
+                    "mousemove",
+                    event => {
 
-                    const x =
-                        event.clientX - rect.left;
 
-                    const y =
-                        event.clientY - rect.top;
+                        const rect =
+                            card.getBoundingClientRect();
 
-                    card.style.setProperty(
-                        "--mouse-x",
-                        `${x}px`
-                    );
 
-                    card.style.setProperty(
-                        "--mouse-y",
-                        `${y}px`
-                    );
+                        const x =
+                            event.clientX - rect.left;
 
-                });
+
+                        const y =
+                            event.clientY - rect.top;
+
+
+                        card.style.setProperty(
+                            "--mouse-x",
+                            `${x}px`
+                        );
+
+
+                        card.style.setProperty(
+                            "--mouse-y",
+                            `${y}px`
+                        );
+
+
+                    }
+                );
+
 
             });
 
+
     </script>
+
 
 </body>
 </html>

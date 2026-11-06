@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --bg:#101512;
+  --panel:#19211c;
+  --panel2:#202a23;
+  --accent:#a4e6b5;
+  --text:#edf3ee;
+  --muted:#a1afa4;
+  --line:#344239;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  min-height:100vh;
+  padding:55px 20px;
+}
+.profile{
+  max-width:1050px;
+  margin:auto;
+}
+.topline{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  padding-bottom:18px;
+  margin-bottom:48px;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.topline span:last-child{color:var(--accent)}
+.hero{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:55px;
+  align-items:center;
+  margin-bottom:65px;
+}
+.photo{
+  width:250px;
+  height:300px;
+  background:var(--panel2);
+  overflow:hidden;
+  border-radius:4px 75px 4px 4px;
+  border-bottom:5px solid var(--accent);
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.photo-placeholder{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-size:65px;
+}
+.eyebrow{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+h1{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(35px,6vw,65px);
+  line-height:1.08;
+  letter-spacing:-2px;
+  margin-bottom:15px;
+}
+.role{
+  color:var(--muted);
+  font-size:16px;
+  margin-bottom:28px;
+}
+.contacts{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 24px;
+}
+.contacts a{
+  color:var(--text);
+  font-size:13px;
+  text-decoration:none;
+  transition:.25s;
+}
+.contacts a i{
+  color:var(--accent);
+  margin-right:8px;
+}
+.contacts a:hover{color:var(--accent)}
+.about{
+  background:var(--panel);
+  border-left:4px solid var(--accent);
+  padding:30px 35px;
+  margin-bottom:50px;
+  font-size:16px;
+  line-height:1.85;
+  color:#c7d2ca;
+}
+.section-heading{
+  font-family:'Manrope',sans-serif;
+  font-size:23px;
+  margin-bottom:25px;
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+.section-heading i{color:var(--accent);font-size:18px}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.box{
+  background:var(--panel);
+  padding:30px;
+  border:1px solid var(--line);
+  transition:.25s;
+}
+.box:hover{
+  border-color:var(--accent);
+  transform:translateY(-3px);
+}
+.box h3{
+  font-size:15px;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:23px;
+}
+.info-line{
+  display:grid;
+  grid-template-columns:95px 1fr;
+  gap:12px;
+  margin-bottom:19px;
+  font-size:14px;
+  line-height:1.6;
+}
+.label{
+  color:var(--muted);
+  font-size:12px;
+  text-transform:uppercase;
+  padding-top:2px;
+}
+.value{color:var(--text)}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:20px;
+}
+.badges span{
+  background:var(--panel2);
+  border:1px solid var(--line);
+  padding:8px 13px;
+  border-radius:3px;
+  color:#d3e1d5;
+  font-size:12px;
+}
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.skills span{
+  background:var(--panel2);
+  padding:10px 14px;
+  font-size:13px;
+  border-bottom:2px solid var(--accent);
+}
+.language{
+  display:flex;
+  justify-content:space-between;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+.language span:last-child{color:var(--accent)}
+.footer{
+  margin-top:55px;
+  padding-top:25px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+  color:var(--muted);
+  font-size:12px;
+}
+.footer a{color:var(--accent);text-decoration:none}
+@media(max-width:700px){
+  body{padding:25px 16px}
+  .topline{margin-bottom:30px}
+  .hero{grid-template-columns:1fr;gap:25px;margin-bottom:35px}
+  .photo{width:180px;height:210px;margin:auto}
+  .hero-content{text-align:center}
+  h1{font-size:39px;letter-spacing:-1px}
+  .contacts{justify-content:center}
+  .about{padding:22px;font-size:14px}
+  .grid{grid-template-columns:1fr}
+  .box{padding:23px}
+}
+@media print{
+  body{background:white;color:#111;padding:15px}
+  .profile{max-width:100%}
+  .box,.about{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<main class="profile">
+
+<div class="topline">
+  <span>Personal Profile</span>
+  <span><i class="fa-solid fa-circle"></i> Profile Overview</span>
+</div>
+
+<header class="hero">
+  <div class="photo">
+    <!-- Replace profile.jpg with the person's photo -->
+    <img src="profile.jpg" alt="Profile Picture"
+    onerror="this.style.display='none'">
+  </div>
+  <div class="hero-content">
+    <div class="eyebrow">Personal Introduction</div>
+    <h1>PERSON NAME</h1>
+    <div class="role">Community & Wellness</div>
+    <div class="contacts">
+      <a href="mailto:alvina.t.shahid@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+        alvina.t.shahid@gmail.com
+      </a>
+      <a href="tel:+8801521582077">
+        <i class="fa-solid fa-phone"></i>
+        +880 1521-582077
+      </a>
+      <a href="https://wa.me/8801521582077">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="about">
+  I believe in bringing people together. For over 10 years I've
+  worked with families, schools, and local groups to create
+  welcoming spaces. I love listening, learning, and helping
+  others find their voice.
+</section>
+
+<div class="grid">
+
+<section class="box">
+  <h3><i class="fa-solid fa-user"></i> About Me</h3>
+  <div class="info-line">
+    <span class="label">Location</span>
+    <span class="value">Nayarhat, Savar, Dhaka, Bangladesh</span>
+  </div>
+  <div class="info-line">
+    <span class="label">Work</span>
+    <span class="value">Community program director · 12+ years</span>
+  </div>
+  <div class="info-line">
+    <span class="label">Education</span>
+    <span class="value">National Institute of Textile Engineering & Research (NITER)</span>
+  </div>
+  <div class="info-line">
+    <span class="label">Focus</span>
+    <span class="value">Family support · Mental health</span>
+  </div>
+  <div class="badges">
+    <span>2024 Community Award</span>
+    <span>Mentor</span>
+    <span>Flexible</span>
+  </div>
+</section>
+
+<section class="box">
+  <h3><i class="fa-solid fa-layer-group"></i> Skills & Interests</h3>
+  <div class="skills">
+    <span>Mediation</span>
+    <span>Facilitation</span>
+    <span>Counseling</span>
+    <span>Group Leadership</span>
+    <span>Grant Writing</span>
+    <span>Event Planning</span>
+    <span>Storytelling</span>
+    <span>Mindfulness</span>
+  </div>
+  <h3 style="margin-top:35px">
+    <i class="fa-solid fa-globe"></i> Languages
+  </h3>
+  <div class="language">
+    <span>Bengali</span><span>Native</span>
+  </div>
+  <div class="language">
+    <span>English</span><span>Fluent</span>
+  </div>
+  <div class="badges">
+    <span>C1 English</span>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <span><i class="fa-regular fa-id-card"></i> Personal Profile · Always Open</span>
+  <span>Last refresh: Today</span>
+  <a href="javascript:window.print()">
+    <i class="fa-solid fa-print"></i> Print / Share
+  </a>
+  <span>Developed by Black Parrot</span>
+</footer>
+
+</main>
+</body>
+</html>
